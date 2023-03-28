@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<section class="section-products">
+	<div class="container">
+		<div class="row justify-content-center text-center">
+			<div class="col-md-8 col-lg-6">
+				<div class="header">
+					<h3>Featured Product</h3>
+					<h2>Popular Products</h2>
+				</div>
+			</div>
+		</div>
+		@foreach(var item in Model)
+		{
+			<div class="row">
+			<!-- Single Product -->
+			<div class="col-md-6 col-lg-4 col-xl-3">
+				<div id="product-1" class="single-product">
+					<div class="part-2">
+						<h3 class="product-title">@item.ProductName</h3>
+						<h4 class="product-old-price">@item.ProductType</h4>
+						<h4 class="product-price">@item.ProductPrice</h4>
+					</div>
+				</div>
+			</div>
+
+			</div>
+		}
+	</div>
+</section>
